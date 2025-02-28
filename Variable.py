@@ -99,3 +99,23 @@ class Variable:
             term_one = f"{variable_one.get_coefficient()}{variable_one.get_variable()}"
             term_two = f"{variable_two.get_coefficient()}{variable_two.get_variable()}"
             return f"{term_one}/{term_two}"
+        
+
+    def __pow__(variable_one, exponent):
+        """
+        Raise a Variable to a given power.
+        
+        Args:
+            variable_one (Variable): The base variable.
+            exponent (int): The exponent to which the variable is raised.
+        
+        Returns:
+            str: The variable raised to the given power, represented in symbolic form.
+        """
+        variable_one_coefficient = variable_one.get_coefficient()
+        variable_one_variable = variable_one.get_variable()
+        return f"{variable_one_coefficient}{variable_one_variable}^{exponent}"
+    
+
+var1 = Variable(3,"X")
+print(var1 ** 2)
