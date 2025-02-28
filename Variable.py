@@ -117,5 +117,3 @@ class Variable:
         return f"{variable_one_coefficient}{variable_one_variable}^{exponent}"
     
 
-var1 = Variable(3,"X")
-print(var1 ** 2)
