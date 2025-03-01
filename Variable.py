@@ -116,4 +116,19 @@ class Variable:
         variable_one_variable = variable_one.get_variable()
         return f"{variable_one_coefficient}{variable_one_variable}^{exponent}"
     
+    def __str__(self):
+        """
+        Return the string representation of the variable.
+    
+        If the coefficient is 1, only the variable name is returned (e.g., "x" instead of "1x").
+        Otherwise, the coefficient and variable are concatenated as a string.
+    
+        Returns:
+        str: The formatted string representation of the variable.
+        """
+        
+        if self.get_coefficient() == 1:
+            return f"{self.get_variable()}"
+        return f"{self.get_coefficient()}{self.get_variable()}"
+    
 
